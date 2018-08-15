@@ -246,7 +246,7 @@ function isYoutube(str) {
 }  
 
 const adminprefix = "$";  
-const devs = ['269031102340005888'];  
+const devs = ['269031102340005888','375683890125209601','405765566930878464'];  
 
 client.on('message', message => {  
 
