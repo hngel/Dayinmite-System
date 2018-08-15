@@ -708,7 +708,7 @@ client.on('guildMemberAdd', member => {
     .setTitle(`عضو جديد`)
     .setDescription(`اهلا بك في السيرفر`)
     .addField(' :bust_in_silhouette:  انت رقم',`**[ ${member.guild.memberCount} ]**`,true)
-    .setColor('#9a21df')
+    .setColor('#1a1c91')
     .setFooter('The Welcome ', 'https://media.discordapp.net/attachments/472298251752570890/474479419348615178/wellcome49.png')
 var channel =member.guild.channels.find('name', 'welcome')
 if (!channel) return;
@@ -722,7 +722,7 @@ client.on('guildMemberRemove', member => {
     .setTitle(`خرج عضو`)
     .setDescription(`الى اللقاء...`)
     .addField(':bust_in_silhouette:   تبقي',`**[ ${member.guild.memberCount} ]**`,true)
-    .setColor('#9a21df')
+    .setColor('#1a1c91')
     .setFooter('god bay', 'https://media.discordapp.net/attachments/472298251752570890/474479419348615178/wellcome49.png')
 
 
@@ -765,6 +765,31 @@ client.on('message', function(msg) {
       msg.channel.send({embed:embed});
     }
   });
+client.on('message', message => {
+  if (message.content.startsWith("رابط")) {
+      
+message.channel.createInvite({
+      thing: true,
+      maxUses: 20000,
+      maxAge: 86400
+  }).then(invite =>  
+    message.author.sendMessage(invite.url)
+  )//By.HNGEL
+  const embed = new Discord.RichEmbed()
+      .setColor("#1a1c91")
+      .setDescription("| :white_check_mark:  | :heart: .. ! تم ارسال الرابط على الخاص     ")
+      .setFooter("||")
+    message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
+            const Embed11 = new Discord.RichEmbed()
+      .setColor("#1a1c91")
+      .setDescription("هذا الرابط انشر قدر المستطاع."
+
+)//By.HNGEL
+      .setFooter("||")
+
+    message.author.sendEmbed(Embed11)
+  }
+});
 client.on('message', message => {
   if (message.author.kick) return;
   if (!message.content.startsWith(prefix)) return;
