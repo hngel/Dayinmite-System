@@ -839,7 +839,6 @@ channel.send({embed : embed});
                     });
 client.on('message', function(msg) {
     if(msg.content.startsWith (prefix  + 'server')) {
-    if(!message.member.hasPermission('ADMINISTRATOR')) return  
 
       let embed = new Discord.RichEmbed()
       .setColor('#1a1c91')
