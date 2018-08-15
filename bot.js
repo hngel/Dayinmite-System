@@ -766,31 +766,6 @@ client.on('message', function(msg) {
     }
   });
 client.on('message', message => {
-  if (message.content.startsWith("رابط")) {
-      
-message.channel.createInvite({
-      thing: true,
-      maxUses: 20000,
-      maxAge: 86400
-  }).then(invite =>  
-    message.author.sendMessage(invite.url)
-  )//By.HNGEL
-  const embed = new Discord.RichEmbed()
-      .setColor("#1a1c91")
-      .setDescription("| :white_check_mark:  | :heart: .. ! تم ارسال الرابط على الخاص     ")
-      .setFooter("||")
-    message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
-            const Embed11 = new Discord.RichEmbed()
-      .setColor("#1a1c91")
-      .setDescription("هذا الرابط انشر قدر المستطاع."
-
-)//By.HNGEL
-      .setFooter("||")
-
-    message.author.sendEmbed(Embed11)
-  }
-});
-client.on('message', message => {
   if (message.author.kick) return;
   if (!message.content.startsWith(prefix)) return;
 
